@@ -1,0 +1,90 @@
+background yes
+use_xft yes
+xftfont Tahoma:size=8
+xftalpha 0.1
+update_interval 0.5
+total_run_times 0
+own_window yes
+#own_window_type normal
+#own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_colour Black
+own_window_argb_visual yes
+own_window_argb_value 128
+double_buffer yes
+minimum_size 50 25
+maximum_width 600
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color gray
+default_shade_color red
+default_outline_color green
+alignment top_right
+gap_x 30
+gap_y 30
+no_buffers no
+uppercase no
+cpu_avg_samples 4
+net_avg_samples 1
+override_utf8_locale yes
+use_spacer left
+text_buffer_size 256
+
+TEXT
+${voffset -90}
+${font Arial:size=60}${color #B2FF66}${color #99CCFF}${color LightGreen}
+$alignc${time %H:%M}${font Arial:size=18}
+$alignc${time %A}${font Arial:size=18}
+$alignc${time %d %B %Y}
+${font Arial:bold:size=10}${color Tan2}SYSTEM ${color LightGreen}${hr 2}$font$color
+$nodename $alignr${freq_g cpu0}Ghz
+$sysname $kernel $alignr $machine
+Uptime $alignr${uptime}
+Processes (active/total) $alignr$running_processes/$processes
+
+${font Arial:bold:size=10}${color Tan2}PROCESSORS & MEMORY ${color LightGreen}${hr 2}$font$color
+CPU  ${cpu cpu0}% $alignr ${hwmon temp 1}°C
+${cpubar cpu0}
+#CPU1  ${cpu cpu1}% ${cpubar cpu1}
+#CPU2  ${cpu cpu2}% ${cpubar cpu2}
+#CPU3  ${cpu cpu3}% ${cpubar cpu3}
+#CPU4  ${cpu cpu4}% ${cpubar cpu4}
+$font$color MEM  $memperc% $alignr $mem / $memmax
+$membar
+SWAP $swapperc% $alignr $swap / $swapmax
+$swapbar
+
+${font Arial:bold:size=10}${color Tan2}HARD DISK DRIVES ${color LightGreen}${hr 2}$font$color
+Mint   ${fs_used_perc /}%  (${fs_type /}) $alignr${fs_used /} / ${fs_size /}
+${fs_bar /}
+Korora ${fs_used_perc /media/marcos/KORORA}%  $alignr ${fs_used /media/marcos/KORORA} / ${fs_size /media/marcos/KORORA}
+${fs_bar /media/marcos/KORORA}
+Backup1   ${fs_used_perc /media/marcos/BACKUP_1}%  $alignr ${fs_used /media/marcos/BACKUP_1} / ${fs_size /media/marcos/BACKUP_1}
+${fs_bar /media/marcos/BACKUP_1}
+Backup2   ${fs_used_perc /media/marcos/BACKUP_2}%  $alignr ${fs_used /media/marcos/BACKUP_2} / ${fs_size /media/marcos/BACKUP_2}
+${fs_bar /media/marcos/BACKUP_2}
+
+${font Arial:bold:size=10}${color Tan2}NETWORK ${color LightGreen}${hr 2}$font$color
+Interface $alignr $gw_iface
+Gateway $alignr $gw_ip
+IP on $gw_iface $alignr ${addr}
+
+Download: $alignr ${downspeed}/s   ${totaldown}
+Upload: $alignr  ${upspeed}/s   ${totalup}
+
+${font Arial:bold:size=10}${color Tan2}AUDACIOUS ${color LightGreen}${hr 2}$font$color
+${audacious_title 50}
+$audacious_bar
+$audacious_status $alignr$audacious_position / $audacious_length
+#${font Arial:bold:size=10}${color Tan2}TOP PROCESSES ${color LightGreen}${hr 2}
+#$color $font${top name 1}${alignr}${top pid 1}${top cpu 1}%${top mem 1}%
+#${top name 2}${alignr}${top pid 2}${top cpu 2}%${top mem 2}%
+#${top name 3}${alignr}${top pid 3}${top cpu 3}%${top mem 3}%
+#${top name 4}${alignr}${top pid 4}${top cpu 4}%${top mem 4}%
+#${top name 5}${alignr}${top pid 5}${top cpu 5}%${top mem 5}%
+#${top name 6}${alignr}${top pid 6}${top cpu 6}%${top mem 6}%
+#${top name 7}${alignr}${top pid 7}${top cpu 7}%${top mem 7}%
+#${top name 8}${alignr}${top pid 8}${top cpu 8}%${top mem 8}%
+${color LightGreen}${hr 2}
