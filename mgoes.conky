@@ -59,25 +59,27 @@ $swapbar
 ${font Arial:bold:size=10}${color Tan2}HARD DISK DRIVES ${color LightGreen}${hr 2}$font$color
 Mint   ${fs_used_perc /}%  (${fs_type /}) $alignr${fs_used /} / ${fs_size /}
 ${fs_bar /}
-Korora ${fs_used_perc /media/marcos/KORORA}%  $alignr ${fs_used /media/marcos/KORORA} / ${fs_size /media/marcos/KORORA}
-${fs_bar /media/marcos/KORORA}
-Backup1   ${fs_used_perc /media/marcos/BACKUP_1}%  $alignr ${fs_used /media/marcos/BACKUP_1} / ${fs_size /media/marcos/BACKUP_1}
-${fs_bar /media/marcos/BACKUP_1}
-Backup2   ${fs_used_perc /media/marcos/BACKUP_2}%  $alignr ${fs_used /media/marcos/BACKUP_2} / ${fs_size /media/marcos/BACKUP_2}
-${fs_bar /media/marcos/BACKUP_2}
+Neon ${fs_used_perc /media/marcos/NEON}%  $alignr ${fs_used /media/marcos/NEON} / ${fs_size /media/marcos/NEON}
+${fs_bar /media/marcos/NEON}
+Backup   ${fs_used_perc /media/marcos/BACKUP}%  $alignr ${fs_used /media/marcos/BACKUP} / ${fs_size /media/marcos/BACKUP}
+${fs_bar /media/marcos/BACKUP}
+Windows   ${fs_used_perc /media/marcos/WINDOWS}%  $alignr ${fs_used /media/marcos/WINDOWS} / ${fs_size /media/marcos/WINDOWS}
+${fs_bar /media/marcos/WINDOWS}
+Backup Win   ${fs_used_perc /media/marcos/BACKUP_WIN}%  $alignr ${fs_used /media/marcos/BACKUP_WIN} / ${fs_size /media/marcos/BACKUP_WIN}
+${fs_bar /media/marcos/BACKUP_WIN}
 
 ${font Arial:bold:size=10}${color Tan2}NETWORK ${color LightGreen}${hr 2}$font$color
 Interface $alignr $gw_iface
+IP on $gw_iface $alignr ${addr enp0s7}
 Gateway $alignr $gw_ip
-IP on $gw_iface $alignr ${addr}
 
 Download: $alignr ${downspeed}/s   ${totaldown}
 Upload: $alignr  ${upspeed}/s   ${totalup}
 
-${font Arial:bold:size=10}${color Tan2}AUDACIOUS ${color LightGreen}${hr 2}$font$color
-${audacious_title 50}
-$audacious_bar
-$audacious_status $alignr$audacious_position / $audacious_length
+#${font Arial:bold:size=10}${color Tan2}AUDACIOUS ${color LightGreen}${hr 2}$font$color
+#${audacious_title 50}
+#$audacious_bar
+#$audacious_status $alignr$audacious_position / $audacious_length
 #${font Arial:bold:size=10}${color Tan2}TOP PROCESSES ${color LightGreen}${hr 2}
 #$color $font${top name 1}${alignr}${top pid 1}${top cpu 1}%${top mem 1}%
 #${top name 2}${alignr}${top pid 2}${top cpu 2}%${top mem 2}%
