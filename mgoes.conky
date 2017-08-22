@@ -59,23 +59,22 @@ $swapbar
 ${font Arial:bold:size=10}${color Tan2}HARD DISK DRIVES ${color LightGreen}${hr 2}$font$color
 Mint   ${fs_used_perc /}%  (${fs_type /}) $alignr${fs_used /} / ${fs_size /}
 ${fs_bar /}
-Neon ${fs_used_perc /media/marcos/NEON}%  $alignr ${fs_used /media/marcos/NEON} / ${fs_size /media/marcos/NEON}
-${fs_bar /media/marcos/NEON}
-Backup   ${fs_used_perc /media/marcos/BACKUP}%  $alignr ${fs_used /media/marcos/BACKUP} / ${fs_size /media/marcos/BACKUP}
-${fs_bar /media/marcos/BACKUP}
-Windows   ${fs_used_perc /media/marcos/WINDOWS}%  $alignr ${fs_used /media/marcos/WINDOWS} / ${fs_size /media/marcos/WINDOWS}
-${fs_bar /media/marcos/WINDOWS}
-Backup Win   ${fs_used_perc /media/marcos/BACKUP_WIN}%  $alignr ${fs_used /media/marcos/BACKUP_WIN} / ${fs_size /media/marcos/BACKUP_WIN}
-${fs_bar /media/marcos/BACKUP_WIN}
+Arquivos ${fs_used_perc /mnt/ARQUIVOS}%  $alignr ${fs_used /mnt/ARQUIVOS} / ${fs_size /mnt/ARQUIVOS}
+${fs_bar /mnt/ARQUIVOS}
+Windows   ${fs_used_perc /mnt/SISTEMA}%  $alignr ${fs_used /mnt/SISTEMA} / ${fs_size /mnt/SISTEMA}
+${fs_bar /mnt/SISTEMA}
 
 ${font Arial:bold:size=10}${color Tan2}NETWORK ${color LightGreen}${hr 2}$font$color
 Interface $alignr $gw_iface
-IP on $gw_iface $alignr ${addr enp0s7}
+IP on $gw_iface $alignr ${addr eno1}
 Gateway $alignr $gw_ip
+#
+#Download: $alignr ${downspeed}/s   ${totaldown}
+#Upload: $alignr  ${upspeed}/s   ${totalup}
 
-Download: $alignr ${downspeed}/s   ${totaldown}
-Upload: $alignr  ${upspeed}/s   ${totalup}
-
+${font Arial:bold:size=10}${color Tan2}INDICATORS ${color LightGreen}${hr 2}$font$color
+${execp xset q | grep "Num Lock:" | awk '{if ($8 == "on") {print "${color LightGreen}NUM LOCK"} else {print "${color #666666}NUM LOCK"}}'}   ${execp xset q | grep "Caps Lock:" | awk '{if ($4 == "on") {print "${color LightGreen}CAPS LOCK"} else {print "${color #666666}CAPS LOCK"}}'}   ${execp xset q | grep "Scroll Lock:" | awk '{if ($12 == "on") {print "${color LightGreen}SCROLL LOCK"} else {print "${color #666666}SCROLL LOCK"}}'}
+${color}
 #${font Arial:bold:size=10}${color Tan2}AUDACIOUS ${color LightGreen}${hr 2}$font$color
 #${audacious_title 50}
 #$audacious_bar
@@ -89,4 +88,4 @@ Upload: $alignr  ${upspeed}/s   ${totalup}
 #${top name 6}${alignr}${top pid 6}${top cpu 6}%${top mem 6}%
 #${top name 7}${alignr}${top pid 7}${top cpu 7}%${top mem 7}%
 #${top name 8}${alignr}${top pid 8}${top cpu 8}%${top mem 8}%
-${color LightGreen}${hr 2}
+#${color LightGreen}${hr 2}
