@@ -10,7 +10,7 @@ own_window yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 own_window_colour Black
 own_window_argb_visual yes
-own_window_argb_value 128
+own_window_argb_value 192
 double_buffer yes
 minimum_size 50 25
 maximum_width 600
@@ -44,6 +44,10 @@ $sysname $kernel $alignr $machine
 Uptime $alignr${uptime}
 Processes (active/total) $alignr$running_processes/$processes
 
+${font Arial:bold:size=10}${color Tan2}BATTERY ${color LightGreen}${hr 2}$font$color
+$battery $alignr ${battery_percent}%
+$battery_bar
+
 ${font Arial:bold:size=10}${color Tan2}PROCESSORS & MEMORY ${color LightGreen}${hr 2}$font$color
 CPU  ${cpu cpu0}% $alignr ${hwmon temp 1}°C
 ${cpubar cpu0}
@@ -65,8 +69,9 @@ Windows   ${fs_used_perc /mnt/SISTEMA}%  $alignr ${fs_used /mnt/SISTEMA} / ${fs_
 ${fs_bar /mnt/SISTEMA}
 
 ${font Arial:bold:size=10}${color Tan2}NETWORK ${color LightGreen}${hr 2}$font$color
+Wireless Network $alignr $wireless_essid
 Interface $alignr $gw_iface
-IP on $gw_iface $alignr ${addr eno1}
+IP on $gw_iface $alignr ${addr wlp4s0}
 Gateway $alignr $gw_ip
 #
 #Download: $alignr ${downspeed}/s   ${totaldown}
