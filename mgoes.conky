@@ -63,10 +63,12 @@ $swapbar
 ${font Arial:bold:size=10}${color Tan2}HARD DISK DRIVES ${color LightGreen}${hr 2}$font$color
 Mint   ${fs_used_perc /}%  (${fs_type /}) $alignr${fs_used /} / ${fs_size /}
 ${fs_bar /}
-Arquivos ${fs_used_perc /mnt/ARQUIVOS}%  $alignr ${fs_used /mnt/ARQUIVOS} / ${fs_size /mnt/ARQUIVOS}
-${fs_bar /mnt/ARQUIVOS}
-Windows   ${fs_used_perc /mnt/SISTEMA}%  $alignr ${fs_used /mnt/SISTEMA} / ${fs_size /mnt/SISTEMA}
-${fs_bar /mnt/SISTEMA}
+Korora   ${fs_used_perc /mnt/KORORA}%  (${fs_type /mnt/KORORA}) $alignr${fs_used /mnt/KORORA} / ${fs_size /mnt/KORORA}
+${fs_bar /mnt/KORORA}
+Windows   ${fs_used_perc /mnt/WINDOWS}%  $alignr ${fs_used /mnt/WINDOWS} / ${fs_size /mnt/WINDOWS}
+${fs_bar /mnt/WINDOWS}
+Backup ${fs_used_perc /mnt/BACKUP}%  $alignr ${fs_used /mnt/BACKUP} / ${fs_size /mnt/BACKUP}
+${fs_bar /mnt/BACKUP}
 
 ${font Arial:bold:size=10}${color Tan2}NETWORK ${color LightGreen}${hr 2}$font$color
 Wireless Network $alignr $wireless_essid
