@@ -10,7 +10,7 @@ own_window yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 own_window_colour Black
 own_window_argb_visual yes
-own_window_argb_value 192
+own_window_argb_value 220
 double_buffer yes
 minimum_size 50 25
 maximum_width 600
@@ -23,7 +23,7 @@ default_shade_color red
 default_outline_color green
 alignment top_right
 gap_x 30
-gap_y 30
+gap_y 60
 no_buffers no
 uppercase no
 cpu_avg_samples 4
@@ -34,21 +34,21 @@ text_buffer_size 256
 
 TEXT
 ${voffset -90}
-${font Arial:size=60}${color #B2FF66}${color #99CCFF}${color LightGreen}
-$alignc${time %H:%M}${font Arial:size=18}
-$alignc${time %A}${font Arial:size=18}
+${font Ubuntu:size=60}${color #B2FF66}${color #99CCFF}${color Tan2}
+$alignc${time %H:%M}${font Ubuntu:size=18}
+$alignc${time %A}${font Ubuntu:size=18}
 $alignc${time %d %B %Y}
-${font Arial:bold:size=10}${color Tan2}SYSTEM ${color LightGreen}${hr 2}$font$color
+${font Ubuntu:bold:size=10}${color Tan2}SYSTEM ${color Brown}${hr 2}$font$color
 $nodename $alignr${freq_g cpu0}Ghz
 $sysname $kernel $alignr $machine
 Uptime $alignr${uptime}
 Processes (active/total) $alignr$running_processes/$processes
 
-${font Arial:bold:size=10}${color Tan2}BATTERY ${color LightGreen}${hr 2}$font$color
+${font Ubuntu:bold:size=10}${color Tan2}BATTERY ${color Brown}${hr 2}$font$color
 $battery $alignr ${battery_percent}%
 $battery_bar
 
-${font Arial:bold:size=10}${color Tan2}PROCESSORS & MEMORY ${color LightGreen}${hr 2}$font$color
+${font Ubuntu:bold:size=10}${color Tan2}PROCESSORS & MEMORY ${color Brown}${hr 2}$font$color
 CPU  ${cpu cpu0}% $alignr ${hwmon temp 1}°C
 ${cpubar cpu0}
 #CPU1  ${cpu cpu1}% ${cpubar cpu1}
@@ -60,17 +60,17 @@ $membar
 SWAP $swapperc% $alignr $swap / $swapmax
 $swapbar
 
-${font Arial:bold:size=10}${color Tan2}HARD DISK DRIVES ${color LightGreen}${hr 2}$font$color
-Mint   ${fs_used_perc /}%  (${fs_type /}) $alignr${fs_used /} / ${fs_size /}
+${font Ubuntu:bold:size=10}${color Tan2}HARD DISK DRIVES ${color Brown}${hr 2}$font$color
+Ubuntu   ${fs_used_perc /}%  (${fs_type /}) $alignr${fs_used /} / ${fs_size /}
 ${fs_bar /}
-Korora   ${fs_used_perc /mnt/KORORA}%  (${fs_type /mnt/KORORA}) $alignr${fs_used /mnt/KORORA} / ${fs_size /mnt/KORORA}
-${fs_bar /mnt/KORORA}
-Windows   ${fs_used_perc /mnt/WINDOWS}%  $alignr ${fs_used /mnt/WINDOWS} / ${fs_size /mnt/WINDOWS}
-${fs_bar /mnt/WINDOWS}
-Backup ${fs_used_perc /mnt/BACKUP}%  $alignr ${fs_used /mnt/BACKUP} / ${fs_size /mnt/BACKUP}
-${fs_bar /mnt/BACKUP}
+OpenSuse   ${fs_used_perc /media/marcos/3533a817-cab7-427e-a85d-7a5a4903e13d}%  (${fs_type /media/marcos/3533a817-cab7-427e-a85d-7a5a4903e13d}) $alignr${fs_used /media/marcos/3533a817-cab7-427e-a85d-7a5a4903e13d} / ${fs_size /media/marcos/3533a817-cab7-427e-a85d-7a5a4903e13d}
+${fs_bar /media/marcos/3533a817-cab7-427e-a85d-7a5a4903e13d}
+Windows   ${fs_used_perc /media/marcos/7E80A16C80A12C19}%  $alignr ${fs_used /media/marcos/7E80A16C80A12C19} / ${fs_size /media/marcos/7E80A16C80A12C19}
+${fs_bar /media/marcos/7E80A16C80A12C19}
+Backup ${fs_used_perc /media/marcos/BACKUPS}%  $alignr ${fs_used /media/marcos/BACKUPS} / ${fs_size /media/marcos/BACKUPS}
+${fs_bar /media/marcos/BACKUPS}
 
-${font Arial:bold:size=10}${color Tan2}NETWORK ${color LightGreen}${hr 2}$font$color
+${font Ubuntu:bold:size=10}${color Tan2}NETWORK ${color Brown}${hr 2}$font$color
 Wireless Network $alignr $wireless_essid
 Interface $alignr $gw_iface
 IP on $gw_iface $alignr ${addr wlp4s0}
@@ -79,14 +79,14 @@ Gateway $alignr $gw_ip
 #Download: $alignr ${downspeed}/s   ${totaldown}
 #Upload: $alignr  ${upspeed}/s   ${totalup}
 
-${font Arial:bold:size=10}${color Tan2}INDICATORS ${color LightGreen}${hr 2}$font$color
-${execp xset q | grep "Num Lock:" | awk '{if ($8 == "on") {print "${color LightGreen}NUM LOCK"} else {print "${color #666666}NUM LOCK"}}'}   ${execp xset q | grep "Caps Lock:" | awk '{if ($4 == "on") {print "${color LightGreen}CAPS LOCK"} else {print "${color #666666}CAPS LOCK"}}'}   ${execp xset q | grep "Scroll Lock:" | awk '{if ($12 == "on") {print "${color LightGreen}SCROLL LOCK"} else {print "${color #666666}SCROLL LOCK"}}'}
+${font Ubuntu:bold:size=10}${color Tan2}INDICATORS ${color Brown}${hr 2}$font$color
+${execp xset q | grep "Num Lock:" | awk '{if ($8 == "on") {print "${color Brown}NUM LOCK"} else {print "${color #666666}NUM LOCK"}}'}   ${execp xset q | grep "Caps Lock:" | awk '{if ($4 == "on") {print "${color Brown}CAPS LOCK"} else {print "${color #666666}CAPS LOCK"}}'}   ${execp xset q | grep "Scroll Lock:" | awk '{if ($12 == "on") {print "${color Brown}SCROLL LOCK"} else {print "${color #666666}SCROLL LOCK"}}'}
 ${color}
-#${font Arial:bold:size=10}${color Tan2}AUDACIOUS ${color LightGreen}${hr 2}$font$color
+#${font Ubuntu:bold:size=10}${color Tan2}AUDACIOUS ${color Brown}${hr 2}$font$color
 #${audacious_title 50}
 #$audacious_bar
 #$audacious_status $alignr$audacious_position / $audacious_length
-#${font Arial:bold:size=10}${color Tan2}TOP PROCESSES ${color LightGreen}${hr 2}
+#${font Ubuntu:bold:size=10}${color Tan2}TOP PROCESSES ${color Brown}${hr 2}
 #$color $font${top name 1}${alignr}${top pid 1}${top cpu 1}%${top mem 1}%
 #${top name 2}${alignr}${top pid 2}${top cpu 2}%${top mem 2}%
 #${top name 3}${alignr}${top pid 3}${top cpu 3}%${top mem 3}%
@@ -95,4 +95,4 @@ ${color}
 #${top name 6}${alignr}${top pid 6}${top cpu 6}%${top mem 6}%
 #${top name 7}${alignr}${top pid 7}${top cpu 7}%${top mem 7}%
 #${top name 8}${alignr}${top pid 8}${top cpu 8}%${top mem 8}%
-#${color LightGreen}${hr 2}
+#${color Brown}${hr 2}
