@@ -1,4 +1,10 @@
 # conky-projects
-Projetos Conky
 
-Projetos Conky para Linux
+## Projetos Conky para Linux
+----------------------------
+
+
+```bash
+conky -c <filename.conky>
+```
+
