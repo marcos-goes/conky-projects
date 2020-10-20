@@ -23,7 +23,7 @@ default_shade_color red
 default_outline_color green
 #alignment top_right
 gap_x -230
-gap_y 200
+gap_y 230
 no_buffers no
 uppercase no
 cpu_avg_samples 4
@@ -60,6 +60,7 @@ ${font Ubuntu:bold:size=10}${color Tan2}NETWORK ${color Brown}${hr 2}$font$color
 Wireless Network $alignr $wireless_essid
 IP wifi (wlo1) $alignr ${addr wlo1}
 IP VPN (gpd0) $alignr ${addr gpd0}
+IP wired (eno2) $alignr ${addr eno2}
 #
 #Download: $alignr ${downspeed}/s   ${totaldown}
 #Upload: $alignr  ${upspeed}/s   ${totalup}
