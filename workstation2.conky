@@ -1,0 +1,136 @@
+conky.config ={
+  -- CONKY SETTINGS
+  background = true,
+  update_interval = 1,
+  total_run_times = 0,
+  
+  cpu_avg_samples = 2,
+  net_avg_samples = 2,
+  
+  override_utf8_locale = true,
+  
+  double_buffer = true,
+  no_buffers = true,
+  
+  text_buffer_size = 32768,
+  
+  -- CONKY: WINDOW SPECIFICATIONS
+  own_window = true,
+  own_window_argb_value = 192,
+  own_window_argb_visual = true,
+  own_window_class = 'conky-semi',
+  own_window_colour = '#0b0d18',
+  own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+  -- own_window_transparent = true,
+  own_window_transparent = false,
+  own_window_type = 'normal',
+  -- own_window_type = 'desktop',
+
+  border_inner_margin = 6,
+  border_width = 5, 
+
+  minimum_height = 920,
+
+  minimum_width = 280,
+  maximum_width = 280,
+
+--   alignment = 'top_right',
+--   gap_x = 10,
+--   gap_y = 15,
+
+  gap_x = -320,
+  gap_y = 100,
+
+  -- GRAPHICS SETTINGS
+  draw_shades = false,
+  draw_outline = true,
+  draw_borders = false,
+  draw_graph_borders = true,
+  -- draw_graph_borders = false,
+
+  -- TEXT SETTINGS
+  use_xft = true,
+  font = 'Montserrat Regular:size=10',
+  xftalpha = 0.2,
+
+  uppercase = false,
+
+  -- Pad percentages to this many decimals (0 = no padding)
+  pad_percents = 2,
+
+  -- COLOUR SETTINGS
+  default_color = 'AAAAAA',
+  default_shade_color = '333333',
+  -- default_outline_color = '111111',
+  default_outline_color = '010101',
+  color1 = '999999',
+  color2 = '333333',
+  color3 = '888888',
+  color4 = '444444',
+  color5 = '555555',
+  color6 = '666666',
+  color7 = '3b71a1',
+  color8 = '999999'
+};
+
+
+conky.text = [[
+${alignc}${color1}${font Montserrat Bold:size=70}${time %H:%M}${font}${color}${alignc}
+${voffset -14}
+${alignc}${color1}${font Montserrat Bold:size=20}${time %A}${font}${color}${alignc}
+${voffset -14}
+${alignc}${color1}${font Montserrat Bold:size=20}${time %d %B %Y}${font}${color}${alignc}
+${voffset -8}
+
+${font Montserrat Bold:size=12}${color}SYSTEM ${color}${hr 2}${color}
+${font Montserrat Bold:size=9}${color1}SYSTEM:${color}${font} ${alignr}$sysname $machine
+${font Montserrat Bold:size=9}${color1}HOSTNAME:${color}${font} ${alignr}$nodename
+${font Montserrat Bold:size=9}${color1}UPTIME:${color}${font} ${alignr}$uptime_short
+${font Montserrat Bold:size=9}${color1}KERNEL:${color}${font} ${alignr}$kernel
+${font Montserrat Bold:size=9}${color1}BATTERY:${color}${font} ${alignr}${battery_percent}% ($battery)
+
+${font Montserrat Bold:size=12}${color}PROCESSORS & MEMORY ${color}${hr 2}${color}
+${voffset -15}
+${color3}CPU  ${color3}${cpu cpu0}% $alignr ${hwmon 1 temp 1}°C
+${color3}${cpubar cpu0}${voffset 1}
+${color3}RAM  ${color3}$memperc% $alignr $mem / $memmax
+${color3}$membar${voffset 1}
+${color3}SWAP  ${color3}$swapperc% $alignr $swap / $swapmax
+${color3}$swapbar${voffset 1}
+${color3}DISK  ${color3}${fs_used_perc /}% $alignr ${color3}${fs_used /} / ${fs_size /}
+${color3}${fs_bar /}${voffset 1}
+
+${font Montserrat Bold:size=12}${color}NETWORK ${color}${hr 2}${color}
+${voffset -15}
+${font Montserrat Bold:size=9}${color1}WIRELESS NETWORK  ${color}${font} ${alignr} $wireless_essid
+${font Montserrat Bold:size=9}${color1}INTERFACE  ${color}${font} ${alignr} $gw_iface
+${font Montserrat Bold:size=9}${color1}IP WIFI (wlp4s0) ${color}${font} ${alignr} ${addr wlp4s0}
+${font Montserrat Bold:size=9}${color1}IP VPN (gpd0) ${color}${font} ${alignr} ${addr gpd0}
+${font Montserrat Bold:size=9}${color1}IP WIRED (eno2) ${color}${font} ${alignr} ${addr eno2}
+
+#${font Montserrat Bold:size=12}${color}GPU ${color}${hr 2}${color}${voffset 2}
+#${font Montserrat Light:size=9}${color1}GPU Freq.: $alignr ${color}${font}${nvidia gpufreq} Mhz${voffset 3}
+#${font Montserrat Light:size=9}${color1}Memory Freq.: $alignr ${color}${font}${nvidia memfreq} Mhz${voffset 3}
+#${font Montserrat Light:size=9}${color1}Temperature: $alignr ${color}${font}${nvidia temp}°C ${voffset 3}
+
+${font Montserrat Bold:size=12}${color}TOP PROCESSES ${color}${hr 2}${color}
+${voffset -15}
+${font :size=10}${font Montserrat Bold:size=9}${color1}TOTAL:${color}${font} ${alignr}${processes}
+${voffset -10} 
+${font Montserrat Light:size=9}${color1}APP NAME: ${goto 160}MEMORY: ${goto 245}CPU: ${color}${font}
+${voffset -16}
+${font Montserrat Light:size=9}${color1}${top_mem name 1} ${color}${font} ${goto 160}${top mem 1} % ${goto 235}${top cpu 1} %
+${font Montserrat Light:size=9}${color1}${top_mem name 2} ${color}${font} ${goto 160}${top mem 2} % ${goto 235}${top cpu 2} %
+${font Montserrat Light:size=9}${color1}${top_mem name 3} ${color}${font} ${goto 160}${top mem 3} % ${goto 235}${top cpu 3} %
+${font Montserrat Light:size=9}${color1}${top_mem name 4} ${color}${font} ${goto 160}${top mem 4} % ${goto 235}${top cpu 4} %
+${font Montserrat Light:size=9}${color1}${top_mem name 5} ${color}${font} ${goto 160}${top mem 5} % ${goto 235}${top cpu 5} %
+${font Montserrat Light:size=9}${color1}${top_mem name 6} ${color}${font} ${goto 160}${top mem 6} % ${goto 235}${top cpu 6} %
+${font Montserrat Light:size=9}${color1}${top_mem name 7} ${color}${font} ${goto 160}${top mem 7} % ${goto 235}${top cpu 7} %
+${font Montserrat Light:size=9}${color1}${top_mem name 8} ${color}${font} ${goto 160}${top mem 8} % ${goto 235}${top cpu 8} %
+${font Montserrat Light:size=9}${color1}${top_mem name 9} ${color}${font} ${goto 160}${top mem 9} % ${goto 235}${top cpu 9} %
+${font Montserrat Light:size=9}${color1}${top_mem name 10} ${color}${font} ${goto 160}${top mem 10} % ${goto 235}${top cpu 10} %
+${color}${hr 2}${color}
+${font Montserrat Light:size=10}${color8}${alignr}https://github.com/marcos-goes${color}${font}
+
+
+]];
